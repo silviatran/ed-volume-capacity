@@ -29,7 +29,7 @@ import matplotlib as plt
 # - Load CSV file into pandas DataFrame
 # - Clean missing/invalid values
 # - Ensure numeric columns (Tot_ED_NmbVsts, EDStations) are floats/ints
-# - Calculate Burden Ratio = Tot_ED_NmbVsts / EDStations
+# - Calculate Burden Ratio 
 # - Group data as needed (by County, Year, Category)
 
 # Example:
