@@ -32,8 +32,7 @@ import matplotlib as plt
 # - Calculate Burden Ratio 
 # - Group data as needed (by County, Year, Category)
 
-# Example:
-# df["Burden_Ratio"] = df["Tot_ED_NmbVsts"] / df["EDStations"]
+
 
 # ================================
 # 2. Graph Setup 
@@ -42,11 +41,8 @@ import matplotlib as plt
 # - Create initial bar chart
 # - X-axis: County
 # - Y-axis: Burden Ratio
-# - Color: shortage (Yes/No) OR keep it uniform
 # - Set title, axis labels, layout
 
-# Example:
-# fig = px.bar(df, x="CountyName", y="Burden_Ratio", color="PrimaryCareShortageArea")
 
 # ================================
 # 3. Filters/Slider
@@ -92,4 +88,3 @@ import matplotlib as plt
 # - Optionally integrate with Dash (if making a web app)
 # - Deliver final visualization
 
-# Example: fig.show() to test locally
