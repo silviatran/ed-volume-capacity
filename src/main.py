@@ -8,7 +8,7 @@ Team 4:
 - Isabella Alvarez (ID: )
 - Brizeyda Hernandez (ID:)
 - Anh Pham (ID: 030877663)
-- Salvador Sanchez (ID:)
+- Salvador Sanchez (ID: 030187961)
 - Silvia Tran (ID:)
 
 Goal:
@@ -87,4 +87,5 @@ import matplotlib as plt
 # - Clean up code, add comments
 # - Optionally integrate with Dash (if making a web app)
 # - Deliver final visualization
+
 
