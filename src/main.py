@@ -80,7 +80,8 @@ def preprocess_data(filepath: str) -> pd.DataFrame:
 def plot_initial_graph(df: pd.DataFrame):
     # Filter for top 10 counties in California
 
-    # Make a list of the top 10 counties in California by population
+    # Select a list of Sounthern California counties by 
+    # California counties by population (2025). World Population Review. (n.d.). https://worldpopulationreview.com/us-counties/california 
     counties = ['Los Angeles', 'San Diego', 'Orange', 
     'Riverside', 'San Bernardino', 'Kern', 'Ventura', 'Santa Barbara', 'San Luis Obispo', 'Imperial']
 
