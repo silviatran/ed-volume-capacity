@@ -22,6 +22,36 @@ import pandas as pd
 import plotly.express as px
 import matplotlib as plt
 
+# REPLACE WITH THE PATH TO YOUR EXCEL FILE
+xls = pd.ExcelFile("C:\\Users\\sanju\\Downloads\\CSULB\\FALL2025\\CECS450\\Project1\\emergency-department-volume-and-capacity-2021-2023.xlsx", engine="openpyxl")
+print(f'Sheets: {xls.sheet_names}')
+df = xls.parse('ED_COMBINE_AL')
+print(f'Everything else\n------\n{df.head()}')
+
+
+file_path = "C:\\Users\\sanju\\Downloads\\CSULB\\FALL2025\\CECS450\\Project1\\emergency-department-volume-and-capacity-2021-2023.xlsx"
+df = pd.read_excel(file_path)
+print(df.head())
+
+
+
+
+filtered_df = df.query("year == 2021 and CountyName in ['Los Angeles', 'San Diego', 'Orange', 'Riverside', 'San Bernardino', 'Kern', 'Ventura', 'Santa Barbara', 'San Luis Obispo', 'Imperial']")
+filtered_df["ED Burden Rate"] = (filtered_df["Tot_ED_NmbVsts"] / filtered_df["EDStations"]) * 100
+grouped_df = filtered_df.groupby("CountyName", as_index=False)["ED Burden Rate"].mean()
+
+
+fig = px.bar(
+    grouped_df,
+    x="CountyName",
+    y="ED Burden Rate",
+    title="Burden Ratio of Hospitals by County",
+    labels={"ED Burden Rate": "Burden Ratio", "CountyName": "Top 10 Counties in California"},
+    color="CountyName"
+)
+
+fig.show()
+
 # ================================
 # 1. Data Preprocessing 
 # ================================
@@ -87,5 +117,6 @@ import matplotlib as plt
 # - Clean up code, add comments
 # - Optionally integrate with Dash (if making a web app)
 # - Deliver final visualization
+
 
 
