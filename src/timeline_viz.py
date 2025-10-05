@@ -35,7 +35,7 @@ trace_meta = []  # track (year, category)
 
 
 all_categories = sorted(df["Category"].dropna().unique())
-palette = px.colors.qualitative.Pastel1
+palette = px.colors.qualitative.D3
 color_map = {cat: palette[i % len(palette)] for i, cat in enumerate(all_categories)}
 
 
