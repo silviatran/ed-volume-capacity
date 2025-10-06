@@ -63,6 +63,7 @@ def add_year_traces(yr, visible=False):
         )
         trace_meta.append((yr, cat))
 
+
 for yr in YEARS:
     add_year_traces(yr, visible=(yr == DEFAULT))
 

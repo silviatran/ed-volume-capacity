@@ -33,7 +33,7 @@ def get_burden_by_county_and_category(df, year=None, top_10_by_population=True):
     if top_10_by_population:
         TOP10_POP = [
             "Los Angeles","San Diego","Orange","Riverside","San Bernardino", "Kern",
-                        "Ventura", "Santa Barbara", "San Luis Obispo", "Imperial"
+            "Ventura", "Santa Barbara", "San Luis Obispo", "Imperial"
         ]
         grouped = grouped[grouped["CountyName"].isin(TOP10_POP)]
         grouped["CountyName"] = pd.Categorical(
