@@ -15,6 +15,21 @@ _Data Source:_ https://data.ca.gov/dataset/emergency-department-volume-and-capac
 
 The input data is stored at data/emergency-department-volume-and-capacity-2021-2023.xlsx
 
+For this project, we focused on 10 Southern California counties, selected based on population data from California counties by population (2025). World Population Review. (n.d.). https://worldpopulationreview.com/us-counties/california 
+
+The counties are listed below in descending order of population:
+1. Los Angeles
+2. San Diego
+3. Orange
+4. Riverside
+5. San Bernardino
+6. Ventura
+7. Kern
+8. Santa Barbara
+9. San Luis Obispo
+10. Imperial
+
+
 ## Objectives
 - Visualizes and analyzes the burden ratio of emergency departments across Southern California counties.
 - Allow interactive filtering by year and bars segment by category.
