@@ -59,17 +59,24 @@ ed-volume-capacity/ # Root
 git clone https://github.com/silviatran/ed-volume-capacity
 ```
 
-2. Install dependencies:
+2. Navigate to the project folder:
+
+_After cloning, make sure you are inside the project directory_
+```bash
+cd ed-volume-capacity
+```
+
+4. Install dependencies:
 ```bash
 pip install -r requirements.txt
 ```
 
-3. Change directory
+4. Change directory:
 ```bash
 cd ed-volume-capacity/src
 ```
 
-4. Run the project
+5. Run the project
 ```bash
 python timeline_viz.py
 ```
