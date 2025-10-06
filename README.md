@@ -1,4 +1,6 @@
 # CECS 450 - Project 1: Emergency Department Burden Analysis
+_Data Source: https://data.ca.gov/dataset/emergency-department-volume-and-capacity_
+
 Due date: 10/06/2025
 
 Written by: Team 4
@@ -14,7 +16,6 @@ Written by: Team 4
 - Visualizes and analyzes the burden ratio of emergency departments across Southern California counties.
 - Allow interactive filtering by year and bars segment by category.
 - Enable hover tooltips to show extra details.
-_Data Source: https://data.ca.gov/dataset/emergency-department-volume-and-capacity_
 
 ## Requiremets
 python 3.8+
