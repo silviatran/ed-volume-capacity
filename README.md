@@ -29,5 +29,5 @@ cd ed-volume-capacity/src
 
 4. Run the project
 ```bash
-python main.py
+python timeline_viz.py
 ```
