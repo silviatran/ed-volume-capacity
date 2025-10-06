@@ -27,6 +27,8 @@ pandas
 
 plotly
 
+openpyxl
+
 ## Project Structure
 ```bash
 ed-volume-capacity/ # Root
