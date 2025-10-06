@@ -1,9 +1,12 @@
-import plotly.graph_objects as go
+import os
 import plotly.express as px
+import plotly.graph_objects as go
 from data_loader import load_and_clean, get_burden_by_county_and_category
 
-# load the dataset
-df = load_and_clean("data/emergency-department-volume-and-capacity-2021-2023.xlsx")
+base_dir = os.path.dirname(os.path.dirname(__file__))
+filepath = os.path.join(base_dir, "data", "emergency-department-volume-and-capacity-2021-2023.xlsx")
+df = load_and_clean(filepath)
+
 
 YEARS = ["All", 2021, 2022, 2023]
 DEFAULT = "All"
@@ -13,7 +16,7 @@ data_by_year = {}
 cat_orders = {}   # store order per year
 for yr in YEARS:
     g = get_burden_by_county_and_category(
-        df, year=None if yr == "All" else yr, top10_by_population=True
+        df, year=None if yr == "All" else yr, top_10_by_population=True
     )
     data_by_year[yr] = g.copy()
 
@@ -56,7 +59,7 @@ def add_year_traces(yr, visible=False):
             marker_color=color_map[cat],
             visible=visible,
             hovertemplate="<br>Condition: " + str(cat) +
-                          "<br>Burden Ratio: %{y:.2f}<extra></extra>"
+                          "<br>Burden Ratio: %{y:.2f}<extra></extra> ED visits per station"
         )
         trace_meta.append((yr, cat))
 

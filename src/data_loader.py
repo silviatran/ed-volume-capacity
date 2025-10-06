@@ -13,7 +13,7 @@ def load_and_clean(filepath, sheet_name=0):
     return df
 
 
-def get_burden_by_county_and_category(df, year=None, top10_by_population=True):
+def get_burden_by_county_and_category(df, year=None, top_10_by_population=True):
     # filter year
     if year is not None:
         df = df[df["year"] == year]
@@ -30,10 +30,10 @@ def get_burden_by_county_and_category(df, year=None, top10_by_population=True):
     grouped["Burden_Ratio"] = grouped["EDDXCount"] / grouped["EDStations"]
 
     # get top 10 counties in SoCal by population
-    if top10_by_population:
+    if top_10_by_population:
         TOP10_POP = [
-            "Los Angeles","San Diego","Orange","Riverside","San Bernardino",
-            "Kern","Ventura","Santa Barbara","San Luis Obispo","Imperial"
+            "Los Angeles","San Diego","Orange","Riverside","San Bernardino", "Kern",
+                        "Ventura", "Santa Barbara", "San Luis Obispo", "Imperial"
         ]
         grouped = grouped[grouped["CountyName"].isin(TOP10_POP)]
         grouped["CountyName"] = pd.Categorical(
