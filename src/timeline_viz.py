@@ -20,7 +20,7 @@ for yr in YEARS:
     )
     data_by_year[yr] = g.copy()
 
-    # calculate order for this year’s dataset
+    # calculate order for legend
     order = (
         g.groupby("Category")["Burden_Ratio"]
          .sum()
@@ -42,10 +42,12 @@ palette = px.colors.qualitative.Plotly + px.colors.qualitative.Set3[:5]
 color_map = {cat: palette[i % len(palette)] for i, cat in enumerate(all_categories)}
 
 
+# logic ideas & partial code generated from chatgpt
 def add_year_traces(yr, visible=False):
     g = data_by_year[yr]
     cat_order = cat_orders[yr]  # dynamic per year
 
+    # help from chatgpt
     for cat in cat_order:
         vals = []
         for c in counties:
@@ -71,23 +73,29 @@ for yr in YEARS:
 buttons = []
 total_traces = len(fig.data)
 
+# logic ideas & code helped by chatgpt
 for yr in YEARS:
     vis = [False] * total_traces
     for i, (t_year, _cat) in enumerate(trace_meta):
         if t_year == yr:
             vis[i] = True
 
-    title_text = f"Burden Ratio by County (Top 10 by Population) — {('2021–2023' if yr=='All' else yr)}"
+    title_text = f"Burden Ratio by Southern California County (Top 10 by Population) — " \
+                 f"{('2021–2023' if yr == 'All' else yr)}"
     buttons.append(dict(
         label=("2021–2023" if yr == "All" else str(yr)),
         method="update",
-        args=[{"visible": vis}, {"title": title_text}]
+        args=[
+            {"visible": vis},
+            {"title": {"text": title_text}}
+        ]
     ))
 
 # visualization layout
 fig.update_layout(
     barmode="stack",
-    title=f"Burden Ratio by County (Top 10 by Population) — {('2021–2023' if DEFAULT=='All' else DEFAULT)}",
+    title=f"Burden Ratio by Southern California County (Top 10 by Population) — "
+          f"{('2021–2023' if DEFAULT=='All' else DEFAULT)}",
     xaxis=dict(title="County", tickangle=-45),
     yaxis=dict(title="Burden Ratio", separatethousands=True),
     legend_title_text="Health-Related Condition",

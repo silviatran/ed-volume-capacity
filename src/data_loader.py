@@ -18,7 +18,7 @@ def get_burden_by_county_and_category(df, year=None, top_10_by_population=True):
     if year is not None:
         df = df[df["year"] == year]
 
-    # remove overall total category (not a condition)
+    # remove overall total category (not a health condition)
     df = df[df["Category"].str.strip().str.lower() != "all ed visits"]
 
     # aggregate: County × Category
@@ -30,6 +30,7 @@ def get_burden_by_county_and_category(df, year=None, top_10_by_population=True):
     grouped["Burden_Ratio"] = grouped["EDDXCount"] / grouped["EDStations"]
 
     # get top 10 counties in SoCal by population
+    # source: https://worldpopulationreview.com/us-counties/california
     if top_10_by_population:
         TOP10_POP = [
             "Los Angeles","San Diego","Orange","Riverside","San Bernardino", "Kern",
