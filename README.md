@@ -73,7 +73,7 @@ pip install -r requirements.txt
 
 4. Change directory:
 ```bash
-cd ed-volume-capacity/src
+cd src
 ```
 
 5. Run the project
